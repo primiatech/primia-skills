@@ -1,0 +1,46 @@
+<!-- Card component — usa CSS variables de tokens.css -->
+<style>
+  .card {
+    background: var(--color-white, #fff);
+    padding: 24px;
+    border-radius: var(--radius-lg, 12px);
+    box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.05));
+    border: 1px solid var(--color-neutral-200, #e5e5e5);
+  }
+  .card-elevated { box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)); border-color: transparent; }
+  .card-flat { box-shadow: none; }
+
+  .card h3 {
+    margin: 0 0 8px;
+    font-family: var(--font-display, var(--font-body, system-ui, -apple-system, sans-serif));
+    font-size: var(--text-lg, 18px);
+    color: var(--color-neutral-900, #171717);
+  }
+  .card p {
+    margin: 0 0 16px;
+    color: var(--color-neutral-700, #404040);
+    line-height: 1.5;
+  }
+  .card-footer {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-neutral-100, #f5f5f5);
+  }
+</style>
+
+<div class="card">
+  <h3>Card padrão</h3>
+  <p>Conteúdo de exemplo. Use cards pra agrupar informações relacionadas.</p>
+</div>
+
+<div class="card card-elevated">
+  <h3>Card elevado</h3>
+  <p>Variante com shadow maior — use pra destacar conteúdo flutuante.</p>
+  <div class="card-footer">
+    <button class="btn btn-ghost btn-sm">Cancelar</button>
+    <button class="btn btn-primary btn-sm">Confirmar</button>
+  </div>
+</div>

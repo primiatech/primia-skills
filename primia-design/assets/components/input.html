@@ -1,0 +1,54 @@
+<!-- Input component — usa CSS variables de tokens.css -->
+<style>
+  .input {
+    font-family: var(--font-body, system-ui, sans-serif);
+    font-size: var(--text-md, 16px);
+    line-height: 1.4;
+    padding: 10px 14px;
+    border: 1px solid var(--color-neutral-300, #d4d4d4);
+    border-radius: var(--radius-md, 8px);
+    background: var(--color-white, #fff);
+    color: var(--color-neutral-900, #171717);
+    width: 100%;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .input::placeholder { color: var(--color-neutral-400, #a3a3a3); }
+  .input:focus {
+    outline: none;
+    border-color: var(--color-primary-500, #3b82f6);
+    box-shadow: 0 0 0 3px var(--color-primary-100, #dbeafe);
+  }
+  .input:disabled {
+    background: var(--color-neutral-100, #f5f5f5);
+    color: var(--color-neutral-500, #737373);
+    cursor: not-allowed;
+  }
+  .input-error {
+    border-color: var(--color-danger-500, #ef4444);
+  }
+  .input-error:focus {
+    box-shadow: 0 0 0 3px var(--color-danger-100, #fee2e2);
+  }
+
+  .field { display: flex; flex-direction: column; gap: 6px; max-width: 400px; }
+  .field-label { font-size: var(--text-sm, 14px); font-weight: 500; color: var(--color-neutral-800, #262626); }
+  .field-help { font-size: var(--text-sm, 14px); color: var(--color-neutral-600, #525252); }
+  .field-error { font-size: var(--text-sm, 14px); color: var(--color-danger-600, #dc2626); }
+</style>
+
+<div class="field">
+  <label class="field-label" for="ex1">Nome completo</label>
+  <input id="ex1" class="input" placeholder="Digite seu nome" />
+  <span class="field-help">Como aparece no documento.</span>
+</div>
+
+<div class="field">
+  <label class="field-label" for="ex2">E-mail</label>
+  <input id="ex2" class="input input-error" value="email-invalido" />
+  <span class="field-error">E-mail inválido</span>
+</div>
+
+<div class="field">
+  <label class="field-label" for="ex3">Mensagem</label>
+  <textarea id="ex3" class="input" rows="4" placeholder="Sua mensagem"></textarea>
+</div>

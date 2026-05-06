@@ -22,6 +22,16 @@ Cada pasta deste repositório é uma skill independente, com seu próprio `SKILL
 
 ---
 
+## Plugin proprietário
+
+| Plugin | O que faz | Versão |
+|---|---|---|
+| [`clone-and-clean`](./clone-and-clean/) | **Plugin completo** (não só skill) que clona páginas de vendas/lançamentos preservando identidade visual e entrega 3 artefatos: cópia 1:1 deploy-ready, copy + metadados extraídos, e versão clean reescrita em HTML semântico com design tokens. Stack JS + Python. | 1.1.1 |
+
+Diferença pro `clone-redesign` (skill leve): `clone-and-clean` é um **plugin** com pipeline completo de scraping + reescrita semântica + verificação. Use quando precisar do clone com fidelidade visual garantida e código reutilizável (não só inspiração).
+
+---
+
 ## Como instalar uma skill
 
 Cada skill tem dois formatos disponíveis:
@@ -32,6 +42,34 @@ Cada skill tem dois formatos disponíveis:
 As 4 skills do topo da tabela (com versão definida) são skills "pesadas" — têm scripts Python, dependências e setup. O `README.md` dentro de cada uma tem o passo a passo completo de instalação.
 
 As 5 skills de baixo (sem versão) são skills "leves" — só têm `SKILL.md` (e templates, no caso de `voz-creator`). Não exigem instalação de dependência: basta copiar a pasta pra `~/.claude/skills/` e o Claude detecta automaticamente.
+
+## Como instalar o plugin `clone-and-clean`
+
+Plugin segue formato diferente das skills — vai pra `~/.claude/plugins/`, não `~/.claude/skills/`.
+
+**Opção A — Via marketplace local:**
+
+```bash
+# Clone este repo num caminho fixo (ex: ~/primia-skills)
+git clone https://github.com/primiatech/primia-skills.git ~/primia-skills
+
+# No Claude Code, adicione como marketplace
+/plugin marketplace add ~/primia-skills/clone-and-clean
+/plugin install clone-and-clean
+```
+
+**Opção B — Manual:**
+
+```bash
+# Mac/Linux
+mkdir -p ~/.claude/plugins/
+cp -r clone-and-clean ~/.claude/plugins/
+
+# Windows
+xcopy /E /I clone-and-clean %USERPROFILE%\.claude\plugins\clone-and-clean
+```
+
+Reinicie o Claude Code e o plugin é detectado automaticamente. Veja `clone-and-clean/INSTALL.md` pra detalhes.
 
 ---
 

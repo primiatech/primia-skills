@@ -1,0 +1,30 @@
+{
+  "name": "clone-and-clean-local",
+  "owner": {
+    "name": "Hoberdan",
+    "email": "berdantx@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "clone-and-clean",
+      "source": ".",
+      "description": "Clona landing pages (HTML + CSS + JS + imagens) e gera três artefatos — deploy-ready, copy + metadados, e versão clean reescrita em HTML semântico com fidelidade visual ao original.",
+      "version": "1.1.1",
+      "author": {
+        "name": "Hoberdan",
+        "email": "berdantx@gmail.com"
+      },
+      "category": "workflow",
+      "tags": [
+        "landing-page",
+        "clone",
+        "scrape",
+        "html-semantico",
+        "design-system",
+        "infoprodutos",
+        "elementor",
+        "wordpress"
+      ]
+    }
+  ]
+}

@@ -35,6 +35,70 @@ As 5 skills de baixo (sem versão) são skills "leves" — só têm `SKILL.md` (
 
 ---
 
+## Plugins recomendados (instalar via marketplace do Claude Code)
+
+As skills deste repositório resolvem problemas específicos da Mentoria Primia. Pra completar o stack do mentorado no dia a dia, instale também esses plugins oficiais via marketplace.
+
+**Como instalar:** dentro do Claude Code, rode o comando `/plugin install <plugin>@<marketplace>` com cada um da lista abaixo.
+
+### Tier 1 — Essenciais (instalar antes de começar)
+
+Esses são a base do stack. Sem eles, o Claude funciona, mas você perde produtividade óbvia.
+
+```bash
+/plugin install superpowers@claude-plugins-official
+/plugin install document-skills@anthropic-agent-skills
+/plugin install claude-api@anthropic-agent-skills
+/plugin install frontend-design@claude-plugins-official
+/plugin install figma@claude-plugins-official
+/plugin install context7@claude-plugins-official
+```
+
+| Plugin | Pra que serve |
+|---|---|
+| `superpowers` | O "modo de pensar" do Claude. Adiciona brainstorming estruturado, planejamento antes de codar, debugging sistemático, TDD, code review. Maior alavanca de qualidade do stack. |
+| `document-skills` | Manipulação completa de Word, Excel, PowerPoint e PDF. Qualquer entrega pra cliente que envolva documento usa essas skills. |
+| `claude-api` | Toolkit Anthropic com brand-guidelines, theme-factory, internal-comms, mcp-builder, web-artifacts-builder, canvas-design e mais 10 skills. |
+| `frontend-design` | Cria interfaces distintivas, foge do "design AI genérico". Componentes, páginas, landing pages com qualidade de produção. |
+| `figma` | Implementa designs do Figma direto pra código. Lê designs, gera screens, mantém Code Connect. Vale ouro pra quem trabalha com designer. |
+| `context7` | Documentação atualizada de qualquer biblioteca/framework (React, Next, Tailwind, Supabase, etc). **Essencial pra mentorado começando dev** — evita o Claude inventar API antiga. |
+
+### Tier 2 — Quando precisar (instalar conforme demanda)
+
+Esses não são pra todo mundo. Instala quando o projeto pedir.
+
+```bash
+# Quando for construir SaaS, área de membros ou app com banco
+/plugin install supabase@claude-plugins-official
+
+# Quando for testar landing/app local no browser via Claude
+/plugin install webapp-testing@anthropic-agent-skills
+
+# Quando começar a usar PRs e issues do GitHub no fluxo
+/plugin install github@claude-plugins-official
+
+# Pra criar suas próprias skills do jeito certo
+/plugin install skill-creator@claude-plugins-official
+```
+
+### Como verificar o que está instalado
+
+```bash
+/plugin list
+```
+
+Mostra todos os plugins ativos. Cada plugin pode trazer múltiplas skills, comandos e agentes — o Claude detecta automaticamente.
+
+### Atualizar plugins
+
+```bash
+/plugin update <plugin>@<marketplace>
+```
+
+Marketplaces atualizam com frequência. Vale rodar `/plugin update` esporadicamente nos plugins do Tier 1.
+
+---
+
 ## Suporte
 
 Uso interno e educacional dos alunos da Mentoria Primia. Para suporte, dúvidas ou sugestões, fale com o Hoberdan.

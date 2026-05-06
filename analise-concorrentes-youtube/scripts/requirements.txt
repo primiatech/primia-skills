@@ -1,0 +1,8 @@
+google-api-python-client
+youtube-transcript-api
+yt-dlp
+openpyxl
+python-docx
+python-pptx
+requests
+Pillow

@@ -1,0 +1,503 @@
+<!--
+  Template HTML — voz consolidada do creator (dark Primia)
+
+  USO PELO CONSOLIDADOR:
+  - Substitua os placeholders entre [colchetes] pelo conteúdo real
+  - Mantenha o design system: tokens CSS, estrutura de seções, navegação sticky
+  - O conteúdo deve ser EQUIVALENTE ao do voz-[creator].md, em formato visual
+  - Não invente dados — se a régua .md tem "a investigar" em algo, mantenha aqui também
+  - Use blockquote para citações literais com cor dourada
+  - Tabelas em fundo --bg-card
+
+  Tokens fixos (dark Primia):
+  --bg:#0b0b0f --bg-card:#141419 --bg-elev:#1c1c24
+  --purple:#8356E7 --purple-light:#a589ff
+  --lime:#C4FF4D --gold:#E4B23C
+  --text:#F5F5F7 --text-dim:rgba(245,245,247,.7) --text-soft:rgba(245,245,247,.45)
+  --border:rgba(255,255,255,.08)
+
+  Fontes:
+  Inter (body) · Playfair Display (display/headings) · JetBrains Mono (labels/mono)
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voz de [Creator] · Documento-régua</title>
+<meta name="description" content="Régua de tom de voz consolidada de [Creator] a partir de [N] peças. Vocabulário, estruturas, metáforas, gatilhos e checklist para copywriter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0b0b0f;
+  --bg-card:#141419;
+  --bg-elev:#1c1c24;
+  --purple:#8356E7;
+  --purple-light:#a589ff;
+  --purple-deep:#6B3FD9;
+  --lime:#C4FF4D;
+  --gold:#E4B23C;
+  --rose:#E8A4B3;
+  --green:#5EE2A0;
+  --text:#F5F5F7;
+  --text-dim:rgba(245,245,247,.7);
+  --text-soft:rgba(245,245,247,.45);
+  --border:rgba(255,255,255,.08);
+  --border-strong:rgba(255,255,255,.14);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh}
+.container{max-width:1240px;margin:0 auto;padding:0 32px}
+
+/* TOPBAR */
+.topbar{position:sticky;top:0;z-index:100;background:rgba(11,11,15,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.topbar-inner{max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.topbar-brand{display:flex;align-items:center;gap:10px;padding:6px 14px;border:1px solid var(--border);border-radius:100px}
+.topbar-dot{width:8px;height:8px;background:var(--lime);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.topbar-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;color:var(--text);text-transform:uppercase}
+.topbar-actions{display:flex;gap:10px}
+.topbar-btn{font-size:12px;color:var(--text-dim);padding:8px 16px;border:1px solid var(--border);border-radius:100px;text-decoration:none;transition:all .2s}
+.topbar-btn:hover{border-color:var(--purple);color:var(--text)}
+
+/* NAV */
+.nav{position:sticky;top:60px;z-index:90;background:rgba(11,11,15,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1240px;margin:0 auto;padding:14px 32px;display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.nav-link{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;color:var(--text-soft);padding:6px 12px;border-radius:6px;text-decoration:none;white-space:nowrap;text-transform:uppercase;transition:all .2s}
+.nav-link:hover{color:var(--gold)}
+.nav-link.active{background:rgba(228,178,60,.12);color:var(--gold)}
+
+/* HERO */
+.hero{padding:96px 32px 64px;max-width:1240px;margin:0 auto;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 30% 50%,rgba(131,86,231,.14),transparent 70%);pointer-events:none;z-index:0}
+.hero-inner{max-width:1180px;margin:0 auto;position:relative;z-index:1}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.hero h1{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(2.8rem,6vw,4.8rem);line-height:1.02;letter-spacing:-.035em;margin-bottom:28px}
+.hero h1 em{font-style:italic;color:var(--purple-light)}
+.hero-sub{color:var(--text-dim);font-size:1.05rem;max-width:640px;margin-bottom:40px}
+
+.hero-synthesis{padding:32px 36px;background:linear-gradient(135deg,rgba(131,86,231,.08),rgba(196,255,77,.04));border:1px solid rgba(131,86,231,.22);border-radius:16px;position:relative;font-size:1.05rem;line-height:1.7;color:var(--text)}
+.hero-synthesis::before{content:'01';position:absolute;top:20px;right:24px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--purple-light);opacity:.7}
+
+/* SECTIONS */
+.section{padding:72px 32px;max-width:1240px;margin:0 auto}
+.section-head{max-width:1000px;margin:0 auto 48px}
+.section-num{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block}
+.section h2{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(2rem,3.6vw,3rem);line-height:1.1;letter-spacing:-.025em;margin-bottom:20px}
+.section h2 em{font-style:italic;color:var(--purple-light)}
+.section-intro{color:var(--text-dim);font-size:1rem;max-width:760px}
+
+/* CARDS */
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px 36px;max-width:1180px;margin:0 auto 20px}
+.card+.card{margin-top:0}
+.card h3{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;letter-spacing:-.015em;margin-bottom:18px;color:var(--text)}
+.card h4{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:20px 0 12px}
+.card p{margin-bottom:14px;color:var(--text-dim);font-size:.95rem}
+.card p strong{color:var(--text);font-weight:600}
+.card ul{margin:12px 0 16px;padding-left:0;list-style:none}
+.card ul li{padding:6px 0 6px 22px;position:relative;color:var(--text-dim);font-size:.95rem;line-height:1.6}
+.card ul li::before{content:'→';position:absolute;left:0;color:var(--purple-light)}
+
+/* TABLE */
+.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;background:var(--bg-card)}
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+th{background:var(--bg-elev);font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-soft);font-weight:600;white-space:nowrap}
+td{color:var(--text-dim)}
+td:first-child{font-weight:600;color:var(--text)}
+td em{font-style:italic;color:var(--gold-light,var(--gold))}
+tr:hover td{background:rgba(131,86,231,.04)}
+
+/* BLOCKQUOTE */
+blockquote{margin:14px 0;padding:14px 20px;background:rgba(228,178,60,.06);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;line-height:1.55;color:var(--text)}
+blockquote .ep{font-family:'JetBrains Mono',monospace;font-style:normal;font-size:.65rem;letter-spacing:.1em;color:var(--text-soft);text-transform:uppercase;margin-left:8px}
+
+/* CHECKLIST */
+.checklist{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:32px 36px;max-width:1180px;margin:0 auto}
+.checklist-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:.95rem;color:var(--text-dim);line-height:1.6}
+.checklist-item:last-child{border-bottom:none}
+.checklist-box{width:18px;height:18px;border:2px solid var(--border-strong);border-radius:5px;flex-shrink:0;margin-top:2px;cursor:pointer;transition:all .2s}
+.checklist-box.checked{background:var(--lime);border-color:var(--lime)}
+.checklist-box.checked::after{content:'✓';display:block;text-align:center;line-height:14px;color:var(--bg);font-size:13px;font-weight:700}
+
+/* TEMPLATE */
+.template{background:linear-gradient(135deg,rgba(131,86,231,.05),rgba(228,178,60,.04));border:1px solid rgba(131,86,231,.2);border-radius:14px;padding:32px 36px;max-width:1180px;margin:0 auto}
+.template-block{margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.template-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.template-label{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--purple-light);margin-bottom:10px}
+.template strong{color:var(--lime)}
+
+/* DIVIDER */
+.divider{max-width:1180px;margin:0 auto;height:1px;background:linear-gradient(90deg,transparent,var(--border-strong),transparent)}
+
+/* FOOTER */
+.footer{padding:60px 32px 80px;text-align:center;border-top:1px solid var(--border);margin-top:80px}
+.footer-meta{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.14em;color:var(--text-soft);text-transform:uppercase;margin-bottom:20px}
+.footer-link{display:inline-block;font-size:.85rem;color:var(--purple-light);text-decoration:none;padding:6px 12px;border:1px solid var(--border);border-radius:100px;margin:0 4px}
+.footer-link:hover{border-color:var(--purple-light)}
+
+@media(max-width:720px){
+  .hero{padding:60px 20px 40px}
+  .section{padding:48px 20px}
+  .container,.topbar-inner,.nav-inner{padding-left:20px;padding-right:20px}
+  .card,.checklist,.template{padding:24px 22px}
+  .hero-synthesis{padding:24px 22px}
+  .nav-inner{gap:6px}
+  .nav-link{font-size:10px;padding:6px 10px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-brand">
+      <div class="topbar-dot"></div>
+      <span class="topbar-label">Voz de [Creator] · Documento-régua</span>
+    </div>
+    <div class="topbar-actions">
+      <a href="./voz-[creator].md" class="topbar-btn">Versão .md</a>
+      <a href="../portal.html" class="topbar-btn">Voltar ao portal</a>
+    </div>
+  </div>
+</header>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#perfil" class="nav-link">01 Perfil</a>
+    <a href="#posicionamento" class="nav-link">02 Posicionamento</a>
+    <a href="#vocabulario" class="nav-link">03 Vocabulário</a>
+    <a href="#narrativa" class="nav-link">04 Narrativa</a>
+    <a href="#metaforas" class="nav-link">05 Metáforas</a>
+    <a href="#gatilhos" class="nav-link">06 Gatilhos</a>
+    <a href="#temas" class="nav-link">07 Temas</a>
+    <a href="#camada-extra" class="nav-link">08 Camada extra</a>
+    <a href="#donts" class="nav-link">09 Don'ts</a>
+    <a href="#mecanicas" class="nav-link">10 Mecânicas</a>
+    <a href="#biblioteca" class="nav-link">11 Citações</a>
+    <a href="#checklist" class="nav-link">12 Checklist</a>
+    <a href="#template" class="nav-link">13 Template</a>
+    <a href="#perguntas" class="nav-link">14 Em aberto</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">§ Régua de voz · [contexto curto, ex: produto/evento]</div>
+    <h1>Voz de <em>[Nome do Creator]</em>.<br>Documento-régua.</h1>
+    <p class="hero-sub">Base para escrever copy, anúncios, páginas e slides que soem como ele(a). Sintetizado a partir de [N] peças (~[X] mil palavras).</p>
+
+    <div class="hero-synthesis">
+      [Síntese do item 1 do .md em 4-6 linhas. Texto corrido denso. Não listar — escrever em prosa.]
+    </div>
+  </div>
+</section>
+
+<!-- 02 — POSICIONAMENTO -->
+<section id="posicionamento" class="section">
+  <div class="section-head">
+    <span class="section-num">02 · Posicionamento implícito</span>
+    <h2>O que <em>[Creator]</em> é e o que ele(a) <em>não é</em>.</h2>
+  </div>
+  <div class="card">
+    <h4>O que [Creator] NÃO é</h4>
+    <ul>
+      <li>[item 1]</li>
+      <li>[item 2]</li>
+      <!-- mín 5 -->
+    </ul>
+    <h4 style="margin-top:24px">O que [Creator] É</h4>
+    <ul>
+      <li>[item 1]</li>
+      <li>[item 2]</li>
+      <!-- mín 5 -->
+    </ul>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 03 — VOCABULÁRIO -->
+<section id="vocabulario" class="section">
+  <div class="section-head">
+    <span class="section-num">03 · Vocabulário-assinatura</span>
+    <h2>As palavras que carregam <em>o tom dele(a)</em>.</h2>
+  </div>
+
+  <div class="card">
+    <h4>Palavras e expressões de alta frequência</h4>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Termo</th><th>Contexto</th><th>Exemplo literal</th></tr></thead>
+        <tbody>
+          <tr><td>[termo]</td><td>[uso]</td><td><em>"[citação]"</em> <span style="color:var(--text-soft)">ep0X</span></td></tr>
+          <!-- mín 30 linhas -->
+        </tbody>
+      </table>
+    </div>
+
+    <h4 style="margin-top:32px">Expressões-chave que viram copy pronto</h4>
+    <!-- mín 10 blockquotes numeradas -->
+    <blockquote>1. "[citação literal]" <span class="ep">· ep0X</span></blockquote>
+    <blockquote>2. "[citação literal]" <span class="ep">· ep0X</span></blockquote>
+
+    <h4 style="margin-top:32px">Como [Creator] chama o leitor/ouvinte</h4>
+    <p>[descrição dos vocativos com exemplos curtos entre aspas]</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 04 — NARRATIVA -->
+<section id="narrativa" class="section">
+  <div class="section-head">
+    <span class="section-num">04 · Estruturas narrativas</span>
+    <h2>A fórmula que <em>se repete em tudo</em>.</h2>
+  </div>
+
+  <div class="card">
+    <h4>Fórmula mestre</h4>
+    <p>[Sequência narrativa, ex: Dor vivida → Raiz → Decisão → Transformação → Convite. Detalhar cada passo.]</p>
+
+    <h4 style="margin-top:24px">Padrões de abertura</h4>
+    <ul><li>[padrão 1] — <em>"exemplo"</em></li><!-- mín 5 --></ul>
+
+    <h4 style="margin-top:24px">Padrões de fechamento</h4>
+    <ul><li>[padrão 1] — <em>"exemplo"</em></li><!-- mín 5 --></ul>
+
+    <h4 style="margin-top:24px">Ritmo típico</h4>
+    <p>[descrição do ritmo dominante]</p>
+    <blockquote>[exemplo literal de parágrafo que demonstra o ritmo] <span class="ep">· ep0X</span></blockquote>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 05 — METÁFORAS -->
+<section id="metaforas" class="section">
+  <div class="section-head">
+    <span class="section-num">05 · Metáforas e imagens</span>
+    <h2>Como ele(a) traduz <em>conceito em imagem</em>.</h2>
+  </div>
+
+  <div class="card">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Metáfora</th><th>O que traduz</th><th>Exemplo literal</th></tr></thead>
+        <tbody>
+          <tr><td>[metáfora]</td><td>[conceito]</td><td><em>"[citação]"</em> <span style="color:var(--text-soft)">ep0X</span></td></tr>
+          <!-- mín 15 linhas -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 06 — GATILHOS -->
+<section id="gatilhos" class="section">
+  <div class="section-head">
+    <span class="section-num">06 · Gatilhos emocionais</span>
+    <h2>O que ele(a) <em>aciona no ouvinte</em>.</h2>
+  </div>
+  <div class="card">
+    <ul>
+      <li><strong>[gatilho 1]</strong> — [descrição] — <em>"exemplo"</em></li>
+      <!-- mín 8 -->
+    </ul>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 07 — TEMAS -->
+<section id="temas" class="section">
+  <div class="section-head">
+    <span class="section-num">07 · Temas-âncora</span>
+    <h2>O que <em>volta sempre</em>.</h2>
+  </div>
+  <div class="card">
+    <!-- mín 8 temas. Cada um com h3 + parágrafo + blockquote -->
+    <h3>1. [Tema]</h3>
+    <p>[descrição]</p>
+    <blockquote>"[citação que ancora]" <span class="ep">· ep0X</span></blockquote>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 08 — CAMADA EXTRA (espiritual/política/ideológica) -->
+<section id="camada-extra" class="section">
+  <div class="section-head">
+    <span class="section-num">08 · Camada [espiritual / política / ideológica]</span>
+    <h2>Como calibrar <em>por nicho</em>.</h2>
+  </div>
+  <div class="card">
+    <!-- Se aplicável: descrever uso, calibragem por nicho. Se não aplicável: marcar "Não aplicável neste creator." -->
+    <h4>Como aparece</h4>
+    <p>[descrição com exemplos]</p>
+
+    <h4 style="margin-top:20px">Calibragem para o copywriter</h4>
+    <ul>
+      <li><strong>Nicho aderente:</strong> [pode usar a camada explícita]</li>
+      <li><strong>Nicho misto:</strong> [usar termos-ponte]</li>
+      <li><strong>Nicho cético:</strong> [substituir por equivalentes]</li>
+      <li><strong>Regra geral:</strong> [nunca esterilizar 100%]</li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 09 — DON'TS -->
+<section id="donts" class="section">
+  <div class="section-head">
+    <span class="section-num">09 · Guia de don'ts</span>
+    <h2>O que <em>nunca</em> usar.</h2>
+  </div>
+  <div class="card">
+    <h4>Vocabulário proibido</h4>
+    <ul><li>[item]</li></ul>
+
+    <h4 style="margin-top:20px">Tons proibidos</h4>
+    <ul><li>[item]</li></ul>
+
+    <h4 style="margin-top:20px">Formatos proibidos</h4>
+    <ul><li>[item]</li></ul>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 10 — MECÂNICAS -->
+<section id="mecanicas" class="section">
+  <div class="section-head">
+    <span class="section-num">10 · Mecânicas pedagógicas</span>
+    <h2>Como ele(a) <em>ensina</em>.</h2>
+  </div>
+  <div class="card">
+    <ol style="padding-left:20px;color:var(--text-dim)">
+      <!-- mín 10 mecânicas. Cada item: nome em bold + descrição curta + blockquote literal -->
+      <li><strong>[Nome da mecânica]</strong> — [descrição]
+        <blockquote>"[exemplo literal]" <span class="ep">· ep0X</span></blockquote>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 11 — BIBLIOTECA DE CITAÇÕES -->
+<section id="biblioteca" class="section">
+  <div class="section-head">
+    <span class="section-num">11 · Biblioteca de citações</span>
+    <h2>Banco de provas <em>literais</em>.</h2>
+  </div>
+  <div class="card">
+    <!-- Organizar por tema. Mín 40 citações totais. -->
+    <h4>[Tema 1]</h4>
+    <blockquote>"..." <span class="ep">· ep0X</span></blockquote>
+    <blockquote>"..." <span class="ep">· ep0X</span></blockquote>
+
+    <h4 style="margin-top:24px">[Tema 2]</h4>
+    <blockquote>"..." <span class="ep">· ep0X</span></blockquote>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 12 — CHECKLIST -->
+<section id="checklist" class="section">
+  <div class="section-head">
+    <span class="section-num">12 · Checklist do copywriter</span>
+    <h2>Antes de dar <em>por pronto</em>.</h2>
+  </div>
+  <div class="checklist">
+    <!-- Cada item: div.checklist-item com .checklist-box (toggleável via JS opcional) e o texto -->
+    <div class="checklist-item"><div class="checklist-box" onclick="this.classList.toggle('checked')"></div><div>Abertura segue o padrão do creator</div></div>
+    <div class="checklist-item"><div class="checklist-box" onclick="this.classList.toggle('checked')"></div><div>[item adaptado às fichas]</div></div>
+    <!-- continuar -->
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 13 — TEMPLATE -->
+<section id="template" class="section">
+  <div class="section-head">
+    <span class="section-num">13 · Template preenchível</span>
+    <h2>Modelo para <em>começar copy do zero</em>.</h2>
+  </div>
+  <div class="template">
+    <div class="template-block">
+      <div class="template-label">Bloco 1 · Abertura</div>
+      <p>[3 modelos de abertura conforme padrão dele(a)]</p>
+    </div>
+    <div class="template-block">
+      <div class="template-label">Bloco 2 · Raiz</div>
+      <p>[Estrutura de como nomear a raiz no tom dele(a)]</p>
+    </div>
+    <div class="template-block">
+      <div class="template-label">Bloco 3 · Prova</div>
+      <p>[Estrutura de prova: biografia, depoimento, etc.]</p>
+    </div>
+    <div class="template-block">
+      <div class="template-label">Bloco 4 · Metáfora</div>
+      <p>[Sugestão de quais metáforas puxar conforme contexto]</p>
+    </div>
+    <div class="template-block">
+      <div class="template-label">Bloco 5 · Convite / Fechamento</div>
+      <p>[Modelos de CTA / fechamento conforme padrão]</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- 14 — PERGUNTAS EM ABERTO -->
+<section id="perguntas" class="section">
+  <div class="section-head">
+    <span class="section-num">14 · Perguntas em aberto</span>
+    <h2>Pontos a <em>validar com o creator</em>.</h2>
+  </div>
+  <div class="card">
+    <ol style="padding-left:20px;color:var(--text-dim)">
+      <li><strong>[Pergunta 1]</strong><br><span style="color:var(--text-soft);font-size:.9rem">[contexto: por que essa pergunta importa]</span></li>
+      <!-- mín 3 -->
+    </ol>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-meta">Documento vivo · atualizar quando novas peças forem adicionadas</div>
+  <div>
+    <a href="./voz-[creator].md" class="footer-link">Versão .md</a>
+    <a href="../portal.html" class="footer-link">Voltar ao portal</a>
+  </div>
+</footer>
+
+<script>
+// Scroll spy básico — destaca a seção atual no nav
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 200) current = s.id;
+  });
+  navLinks.forEach(l => {
+    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+
+</body>
+</html>

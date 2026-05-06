@@ -1,0 +1,10 @@
+playwright
+openpyxl
+python-docx
+python-pptx
+requests
+beautifulsoup4
+yt-dlp
+openai-whisper
+pillow
+pytesseract

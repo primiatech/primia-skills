@@ -12,6 +12,7 @@ Cada pasta deste repositório é uma skill independente, com seu próprio `SKILL
 |---|---|---|
 | [`analise-concorrentes-youtube`](./analise-concorrentes-youtube/) | Inteligência competitiva no YouTube voltada pra infoprodutos. Coleta metadados, transcrições e comentários, e entrega `.xlsx` + `.docx` + `.pptx` + assets. | 1.1.0 |
 | [`primia-design`](./primia-design/) | Gera design system completo (tokens W3C, CSS vars, SCSS, Tailwind, Figma Tokens, styleguide HTML, 6 componentes) a partir de imagem, PDF e/ou URL. Funde múltiplas fontes com hierarquia configurável. | 1.1.0 |
+| [`analise-concorrentes-meta`](./analise-concorrentes-meta/) | Inteligência competitiva publicitária na Biblioteca de Anúncios da Meta (Facebook + Instagram). Scraping + Whisper + OCR. Entrega `.xlsx` + `.docx` + `.pptx` + briefings criativos `.md` + dashboard HTML interativo + criativos baixados. | 1.2.0 |
 
 ---
 
